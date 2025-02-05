@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Movies Online</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #000;
+            color: white;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+        video {
+            width: 100%;
+            max-width: 800px;
+            border: 3px solid white;
+        }
+        .movie-list {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .movie-item {
+            cursor: pointer;
+            padding: 10px;
+            background: #222;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Watch Movies Online</h1>
+        <input type="text" placeholder="Search movies..." id="searchBox">
+        <br><br>
+        <video id="moviePlayer" controls>
+            <source src="sample.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="movie-list">
+            <div class="movie-item" onclick="changeMovie('movie1.mp4')">Movie 1</div>
+            <div class="movie-item" onclick="changeMovie('movie2.mp4')">Movie 2</div>
+            <div class="movie-item" onclick="changeMovie('movie3.mp4')">Movie 3</div>
+        </div>
+    </div>
+
+    <script>
+        function changeMovie(movieSrc) {
+            document.getElementById('moviePlayer').src = movieSrc;
+        }
+    </script>
+</body>
+</html>
